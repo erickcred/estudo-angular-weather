@@ -1,0 +1,28 @@
+
+<div class="search">
+  <form #form (submit)="pegaNomeCidade()">
+    <input
+      name="cidade"
+      type="text"
+      placeholder="Buscar por Cidade"
+      [(ngModel)]="nomeCidade"
+    />
+
+    <span (click)="pegaNomeCidade()">
+      <fa-icon
+        animation="fade"
+        style="--fa-animation-duration: 4s; cursor: pointer;"
+        size="lg"
+        class="search-icon"
+        [icon]="searchIcon"
+      ></fa-icon>
+    </span>
+  </form>
+</div>
+
+<app-weather-card
+  *ngIf="temperatura"
+  [temperaturaInput]="temperatura"
+></app-weather-card>
+
+
